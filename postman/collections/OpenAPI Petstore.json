@@ -2,7 +2,7 @@
 	"info": {
 		"_postman_id": "ec218f89-68e6-4f08-8dd2-0953f938e1e7",
 		"name": "OpenAPI Petstore",
-		"description": "This is a sample server Petstore server. For this sample, you can use the api key `special-key` to test the authorization filters. For OAuth2 flow, you may use `user` as both username and password when asked to login.",
+		"description": "This is a sample server Petstore server. For this sample, you can use the api key `special-key` to test the authorization filters. For OAuth2 flow, you may use `user` as both username and password when asked to login.\n\na\n\nsdasd\n\nas\n\nda\n\nsd\n\na\n\nsd\n\nas\n\nda\n\nsd\n\nas\n\nd\n\nasd\n\nasd\n\nasd\n\na\n\nsd\n\nsd",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_uid": "25489559-ec218f89-68e6-4f08-8dd2-0953f938e1e7"
 	},
@@ -1883,7 +1883,7 @@
 				}
 			],
 			"id": "b3744d8b-9bbd-4c7c-a58e-45f3c86991cc",
-			"description": "dfshjkghtjgtjghjghjghj"
+			"description": "dfshjkghtjgtjghjghjghj\n\nasdas\n\nds\n\nd\n\nasd\n\ns\n\nda\n\nsd\n\nas"
 		},
 		{
 			"name": "store",
