@@ -1,0 +1,3236 @@
+{
+	"info": {
+		"_postman_id": "ec218f89-68e6-4f08-8dd2-0953f938e1e7",
+		"name": "OpenAPI Petstore",
+		"description": "This is a sample server Petstore server. For this sample, you can use the api key `special-key` to test the authorization filters. For OAuth2 flow, you may use `user` as both username and password when asked to login.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_uid": "25489559-ec218f89-68e6-4f08-8dd2-0953f938e1e7"
+	},
+	"item": [
+		{
+			"name": "pet",
+			"item": [
+				{
+					"name": "findByStatus",
+					"item": [
+						{
+							"name": "Finds Pets by status",
+							"id": "dafc333c-9ed2-44bf-b43b-bac2f3c838fd",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "oauth2",
+									"oauth2": [
+										{
+											"key": "scope",
+											"value": "write:pets read:pets",
+											"type": "string"
+										},
+										{
+											"key": "authUrl",
+											"value": "/api/oauth/dialog",
+											"type": "string"
+										},
+										{
+											"key": "grant_type",
+											"value": "implicit",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/xml"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/pet/findByStatus?status=available,available, asdfhl;jhjk",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"pet",
+										"findByStatus"
+									],
+									"query": [
+										{
+											"key": "status",
+											"value": "available,available, asdfhl;jhjk",
+											"description": "(Required) Status values that need to be considered for filter"
+										}
+									]
+								},
+								"description": "Multiple status values can be provided with comma separated strings"
+							},
+							"response": [
+								{
+									"id": "0d0506cc-1181-47b6-a328-ee32aa284de1",
+									"name": "successful operation",
+									"originalRequest": {
+										"auth": {
+											"type": "oauth2",
+											"oauth2": [
+												{
+													"key": "accessToken",
+													"type": "any"
+												},
+												{
+													"key": "addTokenTo",
+													"type": "any"
+												},
+												{
+													"key": "callBackUrl",
+													"type": "any"
+												},
+												{
+													"key": "authUrl",
+													"value": "/api/oauth/dialog",
+													"type": "string"
+												},
+												{
+													"key": "accessTokenUrl",
+													"type": "any"
+												},
+												{
+													"key": "clientId",
+													"type": "any"
+												},
+												{
+													"key": "clientSecret",
+													"type": "any"
+												},
+												{
+													"key": "clientAuth",
+													"type": "any"
+												},
+												{
+													"key": "grantType",
+													"type": "any"
+												},
+												{
+													"key": "scope",
+													"value": "write:pets read:pets",
+													"type": "string"
+												},
+												{
+													"key": "username",
+													"type": "any"
+												},
+												{
+													"key": "password",
+													"type": "any"
+												},
+												{
+													"key": "tokenType",
+													"type": "any"
+												},
+												{
+													"key": "redirectUri",
+													"type": "any"
+												},
+												{
+													"key": "refreshToken",
+													"type": "any"
+												}
+											]
+										},
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/xml"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/pet/findByStatus?status=available,available",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"pet",
+												"findByStatus"
+											],
+											"query": [
+												{
+													"description": "(Required) Status values that need to be considered for filter",
+													"key": "status",
+													"value": "available,available"
+												}
+											]
+										},
+										"description": "Multiple status values can be provided with comma separated strings"
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "[\n  {\n    \"name\": \"<string>\",\n    \"photoUrls\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"id\": \"<long>\",\n    \"category\": {\n      \"id\": \"<long>\",\n      \"name\": \"<string>\"\n    },\n    \"tags\": [\n      {\n        \"id\": \"<long>\",\n        \"name\": \"<string>\"\n      },\n      {\n        \"id\": \"<long>\",\n        \"name\": \"<string>\"\n      }\n    ],\n    \"status\": \"pending\"\n  },\n  {\n    \"name\": \"<string>\",\n    \"photoUrls\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"id\": \"<long>\",\n    \"category\": {\n      \"id\": \"<long>\",\n      \"name\": \"<string>\"\n    },\n    \"tags\": [\n      {\n        \"id\": \"<long>\",\n        \"name\": \"<string>\"\n      },\n      {\n        \"id\": \"<long>\",\n        \"name\": \"<string>\"\n      }\n    ],\n    \"status\": \"sold\"\n  }\n]"
+								},
+								{
+									"id": "7288b579-a3a7-4fa9-a185-aa5c672ca69e",
+									"name": "Invalid status value",
+									"originalRequest": {
+										"auth": {
+											"type": "oauth2",
+											"oauth2": [
+												{
+													"key": "accessToken",
+													"type": "any"
+												},
+												{
+													"key": "addTokenTo",
+													"type": "any"
+												},
+												{
+													"key": "callBackUrl",
+													"type": "any"
+												},
+												{
+													"key": "authUrl",
+													"value": "/api/oauth/dialog",
+													"type": "string"
+												},
+												{
+													"key": "accessTokenUrl",
+													"type": "any"
+												},
+												{
+													"key": "clientId",
+													"type": "any"
+												},
+												{
+													"key": "clientSecret",
+													"type": "any"
+												},
+												{
+													"key": "clientAuth",
+													"type": "any"
+												},
+												{
+													"key": "grantType",
+													"type": "any"
+												},
+												{
+													"key": "scope",
+													"value": "write:pets read:pets",
+													"type": "string"
+												},
+												{
+													"key": "username",
+													"type": "any"
+												},
+												{
+													"key": "password",
+													"type": "any"
+												},
+												{
+													"key": "tokenType",
+													"type": "any"
+												},
+												{
+													"key": "redirectUri",
+													"type": "any"
+												},
+												{
+													"key": "refreshToken",
+													"type": "any"
+												}
+											]
+										},
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/xml"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/pet/findByStatus?status=available,available",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"pet",
+												"findByStatus"
+											],
+											"query": [
+												{
+													"description": "(Required) Status values that need to be considered for filter",
+													"key": "status",
+													"value": "available,available"
+												}
+											]
+										},
+										"description": "Multiple status values can be provided with comma separated strings"
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "text",
+									"header": [],
+									"cookie": [],
+									"body": null
+								}
+							]
+						}
+					],
+					"id": "b197f1dd-1716-4793-9009-d4ff68a0b8aa"
+				},
+				{
+					"name": "findByTags",
+					"item": [
+						{
+							"name": "Finds Pets by tags",
+							"id": "835cfe96-0eea-4dc5-a539-0c615a009781",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "oauth2",
+									"oauth2": [
+										{
+											"key": "scope",
+											"value": "write:pets read:pets",
+											"type": "string"
+										},
+										{
+											"key": "authUrl",
+											"value": "/api/oauth/dialog",
+											"type": "string"
+										},
+										{
+											"key": "grant_type",
+											"value": "implicit",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/xml"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/pet/findByTags?tags=<string>,<string>",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"pet",
+										"findByTags"
+									],
+									"query": [
+										{
+											"description": "(Required) Tags to filter by",
+											"key": "tags",
+											"value": "<string>,<string>"
+										}
+									]
+								},
+								"description": "Multiple tags can be provided with comma separated strings. Use tag1, tag2, tag3 for testing."
+							},
+							"response": [
+								{
+									"id": "2f9772d5-db53-4ba8-984f-ffe9c727843a",
+									"name": "successful operation",
+									"originalRequest": {
+										"auth": {
+											"type": "oauth2",
+											"oauth2": [
+												{
+													"key": "accessToken",
+													"type": "any"
+												},
+												{
+													"key": "addTokenTo",
+													"type": "any"
+												},
+												{
+													"key": "callBackUrl",
+													"type": "any"
+												},
+												{
+													"key": "authUrl",
+													"value": "/api/oauth/dialog",
+													"type": "string"
+												},
+												{
+													"key": "accessTokenUrl",
+													"type": "any"
+												},
+												{
+													"key": "clientId",
+													"type": "any"
+												},
+												{
+													"key": "clientSecret",
+													"type": "any"
+												},
+												{
+													"key": "clientAuth",
+													"type": "any"
+												},
+												{
+													"key": "grantType",
+													"type": "any"
+												},
+												{
+													"key": "scope",
+													"value": "write:pets read:pets",
+													"type": "string"
+												},
+												{
+													"key": "username",
+													"type": "any"
+												},
+												{
+													"key": "password",
+													"type": "any"
+												},
+												{
+													"key": "tokenType",
+													"type": "any"
+												},
+												{
+													"key": "redirectUri",
+													"type": "any"
+												},
+												{
+													"key": "refreshToken",
+													"type": "any"
+												}
+											]
+										},
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/xml"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/pet/findByTags?tags=<string>,<string>",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"pet",
+												"findByTags"
+											],
+											"query": [
+												{
+													"description": "(Required) Tags to filter by",
+													"key": "tags",
+													"value": "<string>,<string>"
+												}
+											]
+										},
+										"description": "Multiple tags can be provided with comma separated strings. Use tag1, tag2, tag3 for testing."
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "[\n  {\n    \"name\": \"<string>\",\n    \"photoUrls\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"id\": \"<long>\",\n    \"category\": {\n      \"id\": \"<long>\",\n      \"name\": \"<string>\"\n    },\n    \"tags\": [\n      {\n        \"id\": \"<long>\",\n        \"name\": \"<string>\"\n      },\n      {\n        \"id\": \"<long>\",\n        \"name\": \"<string>\"\n      }\n    ],\n    \"status\": \"pending\"\n  },\n  {\n    \"name\": \"<string>\",\n    \"photoUrls\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"id\": \"<long>\",\n    \"category\": {\n      \"id\": \"<long>\",\n      \"name\": \"<string>\"\n    },\n    \"tags\": [\n      {\n        \"id\": \"<long>\",\n        \"name\": \"<string>\"\n      },\n      {\n        \"id\": \"<long>\",\n        \"name\": \"<string>\"\n      }\n    ],\n    \"status\": \"sold\"\n  }\n]"
+								},
+								{
+									"id": "c7d24120-adf3-42e2-966b-1908ffd88c27",
+									"name": "Invalid tag value",
+									"originalRequest": {
+										"auth": {
+											"type": "oauth2",
+											"oauth2": [
+												{
+													"key": "accessToken",
+													"type": "any"
+												},
+												{
+													"key": "addTokenTo",
+													"type": "any"
+												},
+												{
+													"key": "callBackUrl",
+													"type": "any"
+												},
+												{
+													"key": "authUrl",
+													"value": "/api/oauth/dialog",
+													"type": "string"
+												},
+												{
+													"key": "accessTokenUrl",
+													"type": "any"
+												},
+												{
+													"key": "clientId",
+													"type": "any"
+												},
+												{
+													"key": "clientSecret",
+													"type": "any"
+												},
+												{
+													"key": "clientAuth",
+													"type": "any"
+												},
+												{
+													"key": "grantType",
+													"type": "any"
+												},
+												{
+													"key": "scope",
+													"value": "write:pets read:pets",
+													"type": "string"
+												},
+												{
+													"key": "username",
+													"type": "any"
+												},
+												{
+													"key": "password",
+													"type": "any"
+												},
+												{
+													"key": "tokenType",
+													"type": "any"
+												},
+												{
+													"key": "redirectUri",
+													"type": "any"
+												},
+												{
+													"key": "refreshToken",
+													"type": "any"
+												}
+											]
+										},
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/xml"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/pet/findByTags?tags=<string>,<string>",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"pet",
+												"findByTags"
+											],
+											"query": [
+												{
+													"description": "(Required) Tags to filter by",
+													"key": "tags",
+													"value": "<string>,<string>"
+												}
+											]
+										},
+										"description": "Multiple tags can be provided with comma separated strings. Use tag1, tag2, tag3 for testing."
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "text",
+									"header": [],
+									"cookie": [],
+									"body": null
+								}
+							]
+						}
+					],
+					"id": "eee69c98-09ee-407b-a00e-5abf0af7857e"
+				},
+				{
+					"name": "{petId}",
+					"item": [
+						{
+							"name": "uploadImage",
+							"item": [
+								{
+									"name": "uploads an image",
+									"id": "01ce74ac-4e9d-4fe6-ac63-465d04fe0041",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"auth": {
+											"type": "oauth2",
+											"oauth2": [
+												{
+													"key": "scope",
+													"value": "write:pets read:pets",
+													"type": "string"
+												},
+												{
+													"key": "authUrl",
+													"value": "/api/oauth/dialog",
+													"type": "string"
+												},
+												{
+													"key": "grant_type",
+													"value": "implicit",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "multipart/form-data"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"description": "Additional data to pass to server",
+													"key": "additionalMetadata",
+													"value": "<string>",
+													"type": "text"
+												},
+												{
+													"description": "file to upload",
+													"key": "file",
+													"value": "<string>",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{baseUrl}}/pet/:petId/uploadImage",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"pet",
+												":petId",
+												"uploadImage"
+											],
+											"variable": [
+												{
+													"key": "petId",
+													"value": "<long>"
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"id": "f96bb8bf-94b4-4377-8e9a-dc9ebcc7478c",
+											"name": "successful operation",
+											"originalRequest": {
+												"auth": {
+													"type": "oauth2",
+													"oauth2": [
+														{
+															"key": "accessToken",
+															"type": "any"
+														},
+														{
+															"key": "addTokenTo",
+															"type": "any"
+														},
+														{
+															"key": "callBackUrl",
+															"type": "any"
+														},
+														{
+															"key": "authUrl",
+															"value": "/api/oauth/dialog",
+															"type": "string"
+														},
+														{
+															"key": "accessTokenUrl",
+															"type": "any"
+														},
+														{
+															"key": "clientId",
+															"type": "any"
+														},
+														{
+															"key": "clientSecret",
+															"type": "any"
+														},
+														{
+															"key": "clientAuth",
+															"type": "any"
+														},
+														{
+															"key": "grantType",
+															"type": "any"
+														},
+														{
+															"key": "scope",
+															"value": "write:pets read:pets",
+															"type": "string"
+														},
+														{
+															"key": "username",
+															"type": "any"
+														},
+														{
+															"key": "password",
+															"type": "any"
+														},
+														{
+															"key": "tokenType",
+															"type": "any"
+														},
+														{
+															"key": "redirectUri",
+															"type": "any"
+														},
+														{
+															"key": "refreshToken",
+															"type": "any"
+														}
+													]
+												},
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "multipart/form-data"
+													},
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "formdata",
+													"formdata": [
+														{
+															"description": "Additional data to pass to server",
+															"key": "additionalMetadata",
+															"value": "<string>",
+															"type": "text"
+														},
+														{
+															"description": "file to upload",
+															"key": "file",
+															"value": "<string>",
+															"type": "text"
+														}
+													]
+												},
+												"url": {
+													"raw": "{{baseUrl}}/pet/:petId/uploadImage",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"pet",
+														":petId",
+														"uploadImage"
+													],
+													"variable": [
+														{
+															"key": "petId",
+															"value": "<long>"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"code\": \"<integer>\",\n  \"type\": \"<string>\",\n  \"message\": \"<string>\"\n}"
+										}
+									]
+								}
+							],
+							"id": "8f7c61c1-0cc6-44d1-874b-6d28c20737e7"
+						},
+						{
+							"name": "Find pet by ID",
+							"id": "6f1ade89-a162-4336-93a0-cd023cb6e998",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "apikey",
+									"apikey": [
+										{
+											"key": "key",
+											"value": "api_key",
+											"type": "string"
+										},
+										{
+											"key": "value",
+											"value": "{{apiKey}}",
+											"type": "string"
+										},
+										{
+											"key": "in",
+											"value": "header",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/xml"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/pet/:petId",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"pet",
+										":petId"
+									],
+									"variable": [
+										{
+											"key": "petId",
+											"value": "<long>"
+										}
+									]
+								},
+								"description": "Returns a single pet"
+							},
+							"response": [
+								{
+									"id": "119a2318-b0b7-4718-9a38-f0731f54534f",
+									"name": "successful operation",
+									"originalRequest": {
+										"auth": {
+											"type": "apikey",
+											"apikey": [
+												{
+													"key": "key",
+													"value": "api_key",
+													"type": "string"
+												},
+												{
+													"key": "value",
+													"value": "{{apiKey}}",
+													"type": "string"
+												},
+												{
+													"key": "in",
+													"value": "header",
+													"type": "string"
+												}
+											]
+										},
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/xml"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/pet/:petId",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"pet",
+												":petId"
+											],
+											"variable": [
+												{
+													"key": "petId",
+													"value": "<long>"
+												}
+											]
+										},
+										"description": "Returns a single pet"
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"name\": \"<string>\",\n  \"photoUrls\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"id\": \"<long>\",\n  \"category\": {\n    \"id\": \"<long>\",\n    \"name\": \"<string>\"\n  },\n  \"tags\": [\n    {\n      \"id\": \"<long>\",\n      \"name\": \"<string>\"\n    },\n    {\n      \"id\": \"<long>\",\n      \"name\": \"<string>\"\n    }\n  ],\n  \"status\": \"pending\"\n}"
+								},
+								{
+									"id": "30e30031-ea9f-410f-aa4e-a58c4177bcf1",
+									"name": "Invalid ID supplied",
+									"originalRequest": {
+										"auth": {
+											"type": "apikey",
+											"apikey": [
+												{
+													"key": "key",
+													"value": "api_key",
+													"type": "string"
+												},
+												{
+													"key": "value",
+													"value": "{{apiKey}}",
+													"type": "string"
+												},
+												{
+													"key": "in",
+													"value": "header",
+													"type": "string"
+												}
+											]
+										},
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/xml"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/pet/:petId",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"pet",
+												":petId"
+											],
+											"variable": [
+												{
+													"key": "petId",
+													"value": "<long>"
+												}
+											]
+										},
+										"description": "Returns a single pet"
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "text",
+									"header": [],
+									"cookie": [],
+									"body": null
+								},
+								{
+									"id": "57f46088-7c1a-43ad-848a-c69a714bcf41",
+									"name": "Pet not found",
+									"originalRequest": {
+										"auth": {
+											"type": "apikey",
+											"apikey": [
+												{
+													"key": "key",
+													"value": "api_key",
+													"type": "string"
+												},
+												{
+													"key": "value",
+													"value": "{{apiKey}}",
+													"type": "string"
+												},
+												{
+													"key": "in",
+													"value": "header",
+													"type": "string"
+												}
+											]
+										},
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/xml"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/pet/:petId",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"pet",
+												":petId"
+											],
+											"variable": [
+												{
+													"key": "petId",
+													"value": "<long>"
+												}
+											]
+										},
+										"description": "Returns a single pet"
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "text",
+									"header": [],
+									"cookie": [],
+									"body": null
+								}
+							]
+						},
+						{
+							"name": "Updates a pet in the store with form data",
+							"id": "39071ae9-dcaa-44c5-9f35-e6920d30ca88",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "oauth2",
+									"oauth2": [
+										{
+											"key": "scope",
+											"value": "write:pets read:pets",
+											"type": "string"
+										},
+										{
+											"key": "authUrl",
+											"value": "/api/oauth/dialog",
+											"type": "string"
+										},
+										{
+											"key": "grant_type",
+											"value": "implicit",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/x-www-form-urlencoded"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"description": "Updated name of the pet",
+											"key": "name",
+											"value": "<string>"
+										},
+										{
+											"description": "Updated status of the pet",
+											"key": "status",
+											"value": "<string>"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseUrl}}/pet/:petId",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"pet",
+										":petId"
+									],
+									"variable": [
+										{
+											"key": "petId",
+											"value": "<long>"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"id": "f3b5f179-26b4-4796-82bf-b5cdfa5b8915",
+									"name": "Invalid input",
+									"originalRequest": {
+										"auth": {
+											"type": "oauth2",
+											"oauth2": [
+												{
+													"key": "accessToken",
+													"type": "any"
+												},
+												{
+													"key": "addTokenTo",
+													"type": "any"
+												},
+												{
+													"key": "callBackUrl",
+													"type": "any"
+												},
+												{
+													"key": "authUrl",
+													"value": "/api/oauth/dialog",
+													"type": "string"
+												},
+												{
+													"key": "accessTokenUrl",
+													"type": "any"
+												},
+												{
+													"key": "clientId",
+													"type": "any"
+												},
+												{
+													"key": "clientSecret",
+													"type": "any"
+												},
+												{
+													"key": "clientAuth",
+													"type": "any"
+												},
+												{
+													"key": "grantType",
+													"type": "any"
+												},
+												{
+													"key": "scope",
+													"value": "write:pets read:pets",
+													"type": "string"
+												},
+												{
+													"key": "username",
+													"type": "any"
+												},
+												{
+													"key": "password",
+													"type": "any"
+												},
+												{
+													"key": "tokenType",
+													"type": "any"
+												},
+												{
+													"key": "redirectUri",
+													"type": "any"
+												},
+												{
+													"key": "refreshToken",
+													"type": "any"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/x-www-form-urlencoded"
+											}
+										],
+										"body": {
+											"mode": "urlencoded",
+											"urlencoded": [
+												{
+													"description": "Updated name of the pet",
+													"key": "name",
+													"value": "<string>"
+												},
+												{
+													"description": "Updated status of the pet",
+													"key": "status",
+													"value": "<string>"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{baseUrl}}/pet/:petId",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"pet",
+												":petId"
+											],
+											"variable": [
+												{
+													"key": "petId",
+													"value": "<long>"
+												}
+											]
+										}
+									},
+									"status": "Method Not Allowed",
+									"code": 405,
+									"_postman_previewlanguage": "text",
+									"header": [],
+									"cookie": [],
+									"body": null
+								}
+							]
+						},
+						{
+							"name": "Deletes a pet",
+							"id": "e9995eac-9139-4a7f-8a18-3352e15fcfdb",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "oauth2",
+									"oauth2": [
+										{
+											"key": "scope",
+											"value": "write:pets read:pets",
+											"type": "string"
+										},
+										{
+											"key": "authUrl",
+											"value": "/api/oauth/dialog",
+											"type": "string"
+										},
+										{
+											"key": "grant_type",
+											"value": "implicit",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "api_key",
+										"value": "<string>"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/pet/:petId",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"pet",
+										":petId"
+									],
+									"variable": [
+										{
+											"key": "petId",
+											"value": "<long>"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"id": "04657ef9-e62b-455f-b331-61607ee45299",
+									"name": "Invalid pet value",
+									"originalRequest": {
+										"auth": {
+											"type": "oauth2",
+											"oauth2": [
+												{
+													"key": "accessToken",
+													"type": "any"
+												},
+												{
+													"key": "addTokenTo",
+													"type": "any"
+												},
+												{
+													"key": "callBackUrl",
+													"type": "any"
+												},
+												{
+													"key": "authUrl",
+													"value": "/api/oauth/dialog",
+													"type": "string"
+												},
+												{
+													"key": "accessTokenUrl",
+													"type": "any"
+												},
+												{
+													"key": "clientId",
+													"type": "any"
+												},
+												{
+													"key": "clientSecret",
+													"type": "any"
+												},
+												{
+													"key": "clientAuth",
+													"type": "any"
+												},
+												{
+													"key": "grantType",
+													"type": "any"
+												},
+												{
+													"key": "scope",
+													"value": "write:pets read:pets",
+													"type": "string"
+												},
+												{
+													"key": "username",
+													"type": "any"
+												},
+												{
+													"key": "password",
+													"type": "any"
+												},
+												{
+													"key": "tokenType",
+													"type": "any"
+												},
+												{
+													"key": "redirectUri",
+													"type": "any"
+												},
+												{
+													"key": "refreshToken",
+													"type": "any"
+												}
+											]
+										},
+										"method": "DELETE",
+										"header": [
+											{
+												"key": "api_key",
+												"value": "<string>"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/pet/:petId",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"pet",
+												":petId"
+											],
+											"variable": [
+												{
+													"key": "petId",
+													"value": "<long>"
+												}
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "text",
+									"header": [],
+									"cookie": [],
+									"body": null
+								}
+							]
+						}
+					],
+					"id": "c146cf7a-012e-47df-b001-d3dde05a4545"
+				},
+				{
+					"name": "Update an existing pet",
+					"id": "9958aa8c-774f-4a91-85d8-2328b97fdbd4",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "oauth2",
+							"oauth2": [
+								{
+									"key": "scope",
+									"value": "write:pets read:pets",
+									"type": "string"
+								},
+								{
+									"key": "authUrl",
+									"value": "/api/oauth/dialog",
+									"type": "string"
+								},
+								{
+									"key": "grant_type",
+									"value": "implicit",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"<string>\",\n  \"photoUrls\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"id\": \"<long>\",\n  \"category\": {\n    \"id\": \"<long>\",\n    \"name\": \"<string>\"\n  },\n  \"tags\": [\n    {\n      \"id\": \"<long>\",\n      \"name\": \"<string>\"\n    },\n    {\n      \"id\": \"<long>\",\n      \"name\": \"<string>\"\n    }\n  ],\n  \"status\": \"pending\"\n}",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/pet",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"pet"
+							]
+						}
+					},
+					"response": [
+						{
+							"id": "e942a138-430a-46ee-9c9a-9e52b831a8ff",
+							"name": "Invalid ID supplied",
+							"originalRequest": {
+								"auth": {
+									"type": "oauth2",
+									"oauth2": [
+										{
+											"key": "accessToken",
+											"type": "any"
+										},
+										{
+											"key": "addTokenTo",
+											"type": "any"
+										},
+										{
+											"key": "callBackUrl",
+											"type": "any"
+										},
+										{
+											"key": "authUrl",
+											"value": "/api/oauth/dialog",
+											"type": "string"
+										},
+										{
+											"key": "accessTokenUrl",
+											"type": "any"
+										},
+										{
+											"key": "clientId",
+											"type": "any"
+										},
+										{
+											"key": "clientSecret",
+											"type": "any"
+										},
+										{
+											"key": "clientAuth",
+											"type": "any"
+										},
+										{
+											"key": "grantType",
+											"type": "any"
+										},
+										{
+											"key": "scope",
+											"value": "write:pets read:pets",
+											"type": "string"
+										},
+										{
+											"key": "username",
+											"type": "any"
+										},
+										{
+											"key": "password",
+											"type": "any"
+										},
+										{
+											"key": "tokenType",
+											"type": "any"
+										},
+										{
+											"key": "redirectUri",
+											"type": "any"
+										},
+										{
+											"key": "refreshToken",
+											"type": "any"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"name\": \"<string>\",\n  \"photoUrls\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"id\": \"<long>\",\n  \"category\": {\n    \"id\": \"<long>\",\n    \"name\": \"<string>\"\n  },\n  \"tags\": [\n    {\n      \"id\": \"<long>\",\n      \"name\": \"<string>\"\n    },\n    {\n      \"id\": \"<long>\",\n      \"name\": \"<string>\"\n    }\n  ],\n  \"status\": \"pending\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/pet",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"pet"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "text",
+							"header": [],
+							"cookie": [],
+							"body": null
+						},
+						{
+							"id": "00efd48b-7563-4737-8328-5aac0de77839",
+							"name": "Pet not found",
+							"originalRequest": {
+								"auth": {
+									"type": "oauth2",
+									"oauth2": [
+										{
+											"key": "accessToken",
+											"type": "any"
+										},
+										{
+											"key": "addTokenTo",
+											"type": "any"
+										},
+										{
+											"key": "callBackUrl",
+											"type": "any"
+										},
+										{
+											"key": "authUrl",
+											"value": "/api/oauth/dialog",
+											"type": "string"
+										},
+										{
+											"key": "accessTokenUrl",
+											"type": "any"
+										},
+										{
+											"key": "clientId",
+											"type": "any"
+										},
+										{
+											"key": "clientSecret",
+											"type": "any"
+										},
+										{
+											"key": "clientAuth",
+											"type": "any"
+										},
+										{
+											"key": "grantType",
+											"type": "any"
+										},
+										{
+											"key": "scope",
+											"value": "write:pets read:pets",
+											"type": "string"
+										},
+										{
+											"key": "username",
+											"type": "any"
+										},
+										{
+											"key": "password",
+											"type": "any"
+										},
+										{
+											"key": "tokenType",
+											"type": "any"
+										},
+										{
+											"key": "redirectUri",
+											"type": "any"
+										},
+										{
+											"key": "refreshToken",
+											"type": "any"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"name\": \"<string>\",\n  \"photoUrls\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"id\": \"<long>\",\n  \"category\": {\n    \"id\": \"<long>\",\n    \"name\": \"<string>\"\n  },\n  \"tags\": [\n    {\n      \"id\": \"<long>\",\n      \"name\": \"<string>\"\n    },\n    {\n      \"id\": \"<long>\",\n      \"name\": \"<string>\"\n    }\n  ],\n  \"status\": \"pending\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/pet",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"pet"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "text",
+							"header": [],
+							"cookie": [],
+							"body": null
+						},
+						{
+							"id": "d1b9cb99-32d0-4672-95da-71625a4a3de5",
+							"name": "Validation exception",
+							"originalRequest": {
+								"auth": {
+									"type": "oauth2",
+									"oauth2": [
+										{
+											"key": "accessToken",
+											"type": "any"
+										},
+										{
+											"key": "addTokenTo",
+											"type": "any"
+										},
+										{
+											"key": "callBackUrl",
+											"type": "any"
+										},
+										{
+											"key": "authUrl",
+											"value": "/api/oauth/dialog",
+											"type": "string"
+										},
+										{
+											"key": "accessTokenUrl",
+											"type": "any"
+										},
+										{
+											"key": "clientId",
+											"type": "any"
+										},
+										{
+											"key": "clientSecret",
+											"type": "any"
+										},
+										{
+											"key": "clientAuth",
+											"type": "any"
+										},
+										{
+											"key": "grantType",
+											"type": "any"
+										},
+										{
+											"key": "scope",
+											"value": "write:pets read:pets",
+											"type": "string"
+										},
+										{
+											"key": "username",
+											"type": "any"
+										},
+										{
+											"key": "password",
+											"type": "any"
+										},
+										{
+											"key": "tokenType",
+											"type": "any"
+										},
+										{
+											"key": "redirectUri",
+											"type": "any"
+										},
+										{
+											"key": "refreshToken",
+											"type": "any"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"name\": \"<string>\",\n  \"photoUrls\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"id\": \"<long>\",\n  \"category\": {\n    \"id\": \"<long>\",\n    \"name\": \"<string>\"\n  },\n  \"tags\": [\n    {\n      \"id\": \"<long>\",\n      \"name\": \"<string>\"\n    },\n    {\n      \"id\": \"<long>\",\n      \"name\": \"<string>\"\n    }\n  ],\n  \"status\": \"pending\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/pet",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"pet"
+									]
+								}
+							},
+							"status": "Method Not Allowed",
+							"code": 405,
+							"_postman_previewlanguage": "text",
+							"header": [],
+							"cookie": [],
+							"body": null
+						}
+					]
+				},
+				{
+					"name": "Add a new pet to the store",
+					"id": "27578873-9f96-4f8c-aeb1-c577afb22e7f",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "oauth2",
+							"oauth2": [
+								{
+									"key": "scope",
+									"value": "write:pets read:pets",
+									"type": "string"
+								},
+								{
+									"key": "authUrl",
+									"value": "/api/oauth/dialog",
+									"type": "string"
+								},
+								{
+									"key": "grant_type",
+									"value": "implicit",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"<string>\",\n  \"photoUrls\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"id\": \"<long>\",\n  \"category\": {\n    \"id\": \"<long>\",\n    \"name\": \"<string>\"\n  },\n  \"tags\": [\n    {\n      \"id\": \"<long>\",\n      \"name\": \"<string>\"\n    },\n    {\n      \"id\": \"<long>\",\n      \"name\": \"<string>\"\n    }\n  ],\n  \"status\": \"pending\"\n}",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/pet",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"pet"
+							]
+						}
+					},
+					"response": [
+						{
+							"id": "ee9437a1-a396-415b-b645-edcaf86fb608",
+							"name": "Invalid input",
+							"originalRequest": {
+								"auth": {
+									"type": "oauth2",
+									"oauth2": [
+										{
+											"key": "accessToken",
+											"type": "any"
+										},
+										{
+											"key": "addTokenTo",
+											"type": "any"
+										},
+										{
+											"key": "callBackUrl",
+											"type": "any"
+										},
+										{
+											"key": "authUrl",
+											"value": "/api/oauth/dialog",
+											"type": "string"
+										},
+										{
+											"key": "accessTokenUrl",
+											"type": "any"
+										},
+										{
+											"key": "clientId",
+											"type": "any"
+										},
+										{
+											"key": "clientSecret",
+											"type": "any"
+										},
+										{
+											"key": "clientAuth",
+											"type": "any"
+										},
+										{
+											"key": "grantType",
+											"type": "any"
+										},
+										{
+											"key": "scope",
+											"value": "write:pets read:pets",
+											"type": "string"
+										},
+										{
+											"key": "username",
+											"type": "any"
+										},
+										{
+											"key": "password",
+											"type": "any"
+										},
+										{
+											"key": "tokenType",
+											"type": "any"
+										},
+										{
+											"key": "redirectUri",
+											"type": "any"
+										},
+										{
+											"key": "refreshToken",
+											"type": "any"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"name\": \"<string>\",\n  \"photoUrls\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"id\": \"<long>\",\n  \"category\": {\n    \"id\": \"<long>\",\n    \"name\": \"<string>\"\n  },\n  \"tags\": [\n    {\n      \"id\": \"<long>\",\n      \"name\": \"<string>\"\n    },\n    {\n      \"id\": \"<long>\",\n      \"name\": \"<string>\"\n    }\n  ],\n  \"status\": \"pending\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/pet",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"pet"
+									]
+								}
+							},
+							"status": "Method Not Allowed",
+							"code": 405,
+							"_postman_previewlanguage": "text",
+							"header": [],
+							"cookie": [],
+							"body": null
+						}
+					]
+				}
+			],
+			"id": "b3744d8b-9bbd-4c7c-a58e-45f3c86991cc",
+			"description": "dfshjkghtjgtjghjghjghj"
+		},
+		{
+			"name": "store",
+			"item": [
+				{
+					"name": "inventory",
+					"item": [
+						{
+							"name": "Returns pet inventories by status",
+							"id": "208b288a-9f00-42b7-9df7-559d6e01b3a0",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "apikey",
+									"apikey": [
+										{
+											"key": "key",
+											"value": "api_key",
+											"type": "string"
+										},
+										{
+											"key": "value",
+											"value": "{{apiKey}}",
+											"type": "string"
+										},
+										{
+											"key": "in",
+											"value": "header",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/store/inventory",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"store",
+										"inventory"
+									]
+								},
+								"description": "Returns a map of status codes to quantities"
+							},
+							"response": [
+								{
+									"id": "496f013e-a5cf-4751-9db8-a96153530257",
+									"name": "successful operation",
+									"originalRequest": {
+										"auth": {
+											"type": "apikey",
+											"apikey": [
+												{
+													"key": "key",
+													"value": "api_key",
+													"type": "string"
+												},
+												{
+													"key": "value",
+													"value": "{{apiKey}}",
+													"type": "string"
+												},
+												{
+													"key": "in",
+													"value": "header",
+													"type": "string"
+												}
+											]
+										},
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/store/inventory",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"store",
+												"inventory"
+											]
+										},
+										"description": "Returns a map of status codes to quantities"
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"nostrud_c7\": \"<integer>\"\n}"
+								}
+							]
+						}
+					],
+					"id": "d54e14df-b973-41b6-8b5d-1dd0991d2eb7"
+				},
+				{
+					"name": "order",
+					"item": [
+						{
+							"name": "{orderId}",
+							"item": [
+								{
+									"name": "Find purchase order by ID",
+									"id": "58ccf064-94fb-4c53-b7f0-515f350424f9",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/xml"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/store/order/:orderId",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"store",
+												"order",
+												":orderId"
+											],
+											"variable": [
+												{
+													"key": "orderId",
+													"value": "<long>"
+												}
+											]
+										},
+										"description": "For valid response try integer IDs with value <= 5 or > 10. Other values will generated exceptions"
+									},
+									"response": [
+										{
+											"id": "36e8cb45-ee20-4ab4-933f-31f9516ce8d1",
+											"name": "successful operation",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/xml"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/store/order/:orderId",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"store",
+														"order",
+														":orderId"
+													],
+													"variable": [
+														{
+															"key": "orderId",
+															"value": "<long>"
+														}
+													]
+												},
+												"description": "For valid response try integer IDs with value <= 5 or > 10. Other values will generated exceptions"
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"id\": \"<long>\",\n  \"petId\": \"<long>\",\n  \"quantity\": \"<integer>\",\n  \"shipDate\": \"<dateTime>\",\n  \"status\": \"approved\",\n  \"complete\": false\n}"
+										},
+										{
+											"id": "01b52fef-c437-4a8b-aec6-6e545dc96695",
+											"name": "Invalid ID supplied",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/xml"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/store/order/:orderId",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"store",
+														"order",
+														":orderId"
+													],
+													"variable": [
+														{
+															"key": "orderId",
+															"value": "<long>"
+														}
+													]
+												},
+												"description": "For valid response try integer IDs with value <= 5 or > 10. Other values will generated exceptions"
+											},
+											"status": "Bad Request",
+											"code": 400,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"body": null
+										},
+										{
+											"id": "b256dea6-9996-4e47-a143-5a507c16415f",
+											"name": "Order not found",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/xml"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/store/order/:orderId",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"store",
+														"order",
+														":orderId"
+													],
+													"variable": [
+														{
+															"key": "orderId",
+															"value": "<long>"
+														}
+													]
+												},
+												"description": "For valid response try integer IDs with value <= 5 or > 10. Other values will generated exceptions"
+											},
+											"status": "Not Found",
+											"code": 404,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"body": null
+										}
+									]
+								},
+								{
+									"name": "Delete purchase order by ID",
+									"id": "6c93db92-bc8f-4b69-880c-b232d6f1cf1c",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/store/order/:orderId",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"store",
+												"order",
+												":orderId"
+											],
+											"variable": [
+												{
+													"key": "orderId",
+													"value": "<string>"
+												}
+											]
+										},
+										"description": "For valid response try integer IDs with value < 1000. Anything above 1000 or nonintegers will generate API errors"
+									},
+									"response": [
+										{
+											"id": "1bd703b5-df53-4965-840b-3d5095ceb5ec",
+											"name": "Invalid ID supplied",
+											"originalRequest": {
+												"method": "DELETE",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/store/order/:orderId",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"store",
+														"order",
+														":orderId"
+													],
+													"variable": [
+														{
+															"key": "orderId",
+															"value": "<string>"
+														}
+													]
+												},
+												"description": "For valid response try integer IDs with value < 1000. Anything above 1000 or nonintegers will generate API errors"
+											},
+											"status": "Bad Request",
+											"code": 400,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"body": null
+										},
+										{
+											"id": "044f7c2a-687d-4a30-8ae3-4c8a6fbbe588",
+											"name": "Order not found",
+											"originalRequest": {
+												"method": "DELETE",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/store/order/:orderId",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"store",
+														"order",
+														":orderId"
+													],
+													"variable": [
+														{
+															"key": "orderId",
+															"value": "<string>"
+														}
+													]
+												},
+												"description": "For valid response try integer IDs with value < 1000. Anything above 1000 or nonintegers will generate API errors"
+											},
+											"status": "Not Found",
+											"code": 404,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"body": null
+										}
+									]
+								}
+							],
+							"id": "c3f24339-2b4e-4fa0-a181-e4a1833aaf29"
+						},
+						{
+							"name": "Place an order for a pet",
+							"id": "be45a645-b508-4fac-94d5-315f7ce591e0",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/xml"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"id\": \"<long>\",\n  \"petId\": \"<long>\",\n  \"quantity\": \"<integer>\",\n  \"shipDate\": \"<dateTime>\",\n  \"status\": \"approved\",\n  \"complete\": false\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/store/order",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"store",
+										"order"
+									]
+								}
+							},
+							"response": [
+								{
+									"id": "eb1bbea6-3f37-4297-bf6e-5ada4c58e241",
+									"name": "successful operation",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/xml"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"id\": \"<long>\",\n  \"petId\": \"<long>\",\n  \"quantity\": \"<integer>\",\n  \"shipDate\": \"<dateTime>\",\n  \"status\": \"approved\",\n  \"complete\": false\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/store/order",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"store",
+												"order"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"id\": \"<long>\",\n  \"petId\": \"<long>\",\n  \"quantity\": \"<integer>\",\n  \"shipDate\": \"<dateTime>\",\n  \"status\": \"approved\",\n  \"complete\": false\n}"
+								},
+								{
+									"id": "c00c8b41-a9a4-4681-b38a-ca106453cc96",
+									"name": "Invalid Order",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/xml"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"id\": \"<long>\",\n  \"petId\": \"<long>\",\n  \"quantity\": \"<integer>\",\n  \"shipDate\": \"<dateTime>\",\n  \"status\": \"approved\",\n  \"complete\": false\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/store/order",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"store",
+												"order"
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "text",
+									"header": [],
+									"cookie": [],
+									"body": null
+								}
+							]
+						}
+					],
+					"id": "bc66914e-bfcc-4cfb-b977-a58fc7e99924"
+				}
+			],
+			"id": "74d6eaaa-c79c-49f6-a50b-f380b2db0be0"
+		},
+		{
+			"name": "user",
+			"item": [
+				{
+					"name": "createWithArray",
+					"item": [
+						{
+							"name": "Creates list of users with given input array",
+							"id": "153c85ba-0545-4da8-ae64-c10ce1f78066",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "[\n  {\n    \"id\": \"<long>\",\n    \"username\": \"<string>\",\n    \"firstName\": \"<string>\",\n    \"lastName\": \"<string>\",\n    \"email\": \"<string>\",\n    \"password\": \"<string>\",\n    \"phone\": \"<string>\",\n    \"userStatus\": \"<integer>\"\n  },\n  {\n    \"id\": \"<long>\",\n    \"username\": \"<string>\",\n    \"firstName\": \"<string>\",\n    \"lastName\": \"<string>\",\n    \"email\": \"<string>\",\n    \"password\": \"<string>\",\n    \"phone\": \"<string>\",\n    \"userStatus\": \"<integer>\"\n  }\n]",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/user/createWithArray",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"user",
+										"createWithArray"
+									]
+								}
+							},
+							"response": [
+								{
+									"id": "c2383857-7b76-4ef8-8930-2bf065aac326",
+									"name": "successful operation",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "[\n  {\n    \"id\": \"<long>\",\n    \"username\": \"<string>\",\n    \"firstName\": \"<string>\",\n    \"lastName\": \"<string>\",\n    \"email\": \"<string>\",\n    \"password\": \"<string>\",\n    \"phone\": \"<string>\",\n    \"userStatus\": \"<integer>\"\n  },\n  {\n    \"id\": \"<long>\",\n    \"username\": \"<string>\",\n    \"firstName\": \"<string>\",\n    \"lastName\": \"<string>\",\n    \"email\": \"<string>\",\n    \"password\": \"<string>\",\n    \"phone\": \"<string>\",\n    \"userStatus\": \"<integer>\"\n  }\n]",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/user/createWithArray",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"user",
+												"createWithArray"
+											]
+										}
+									},
+									"status": "Internal Server Error",
+									"code": 500,
+									"_postman_previewlanguage": "text",
+									"header": [],
+									"cookie": [],
+									"body": null
+								}
+							]
+						}
+					],
+					"id": "652fee5e-d6d8-474c-b8fd-5333622df8b4"
+				},
+				{
+					"name": "createWithList",
+					"item": [
+						{
+							"name": "Creates list of users with given input array",
+							"id": "41de9d10-6fe8-4865-962e-daa793a9145b",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "[\n  {\n    \"id\": \"<long>\",\n    \"username\": \"<string>\",\n    \"firstName\": \"<string>\",\n    \"lastName\": \"<string>\",\n    \"email\": \"<string>\",\n    \"password\": \"<string>\",\n    \"phone\": \"<string>\",\n    \"userStatus\": \"<integer>\"\n  },\n  {\n    \"id\": \"<long>\",\n    \"username\": \"<string>\",\n    \"firstName\": \"<string>\",\n    \"lastName\": \"<string>\",\n    \"email\": \"<string>\",\n    \"password\": \"<string>\",\n    \"phone\": \"<string>\",\n    \"userStatus\": \"<integer>\"\n  }\n]",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/user/createWithList",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"user",
+										"createWithList"
+									]
+								}
+							},
+							"response": [
+								{
+									"id": "a3a0a7a3-f0d3-4250-ada2-9efe97e32818",
+									"name": "successful operation",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "[\n  {\n    \"id\": \"<long>\",\n    \"username\": \"<string>\",\n    \"firstName\": \"<string>\",\n    \"lastName\": \"<string>\",\n    \"email\": \"<string>\",\n    \"password\": \"<string>\",\n    \"phone\": \"<string>\",\n    \"userStatus\": \"<integer>\"\n  },\n  {\n    \"id\": \"<long>\",\n    \"username\": \"<string>\",\n    \"firstName\": \"<string>\",\n    \"lastName\": \"<string>\",\n    \"email\": \"<string>\",\n    \"password\": \"<string>\",\n    \"phone\": \"<string>\",\n    \"userStatus\": \"<integer>\"\n  }\n]",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/user/createWithList",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"user",
+												"createWithList"
+											]
+										}
+									},
+									"status": "Internal Server Error",
+									"code": 500,
+									"_postman_previewlanguage": "text",
+									"header": [],
+									"cookie": [],
+									"body": null
+								}
+							]
+						}
+					],
+					"id": "bf3e2aa0-4642-46fe-8596-e49927c05166"
+				},
+				{
+					"name": "login",
+					"item": [
+						{
+							"name": "Logs user into the system",
+							"id": "ccaca445-1e29-4d2a-9ef5-358f1bd65bc8",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/xml"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/user/login?username=<string>&password=<string>",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"user",
+										"login"
+									],
+									"query": [
+										{
+											"description": "(Required) The user name for login",
+											"key": "username",
+											"value": "<string>"
+										},
+										{
+											"description": "(Required) The password for login in clear text",
+											"key": "password",
+											"value": "<string>"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"id": "288f9cde-9078-4caa-87bb-ce8447acc2d2",
+									"name": "successful operation",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/xml"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/user/login?username=<string>&password=<string>",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"user",
+												"login"
+											],
+											"query": [
+												{
+													"description": "(Required) The user name for login",
+													"key": "username",
+													"value": "<string>"
+												},
+												{
+													"description": "(Required) The password for login in clear text",
+													"key": "password",
+													"value": "<string>"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"disabled": false,
+											"description": {
+												"content": "calls per hour allowed by the user",
+												"type": "text/plain"
+											},
+											"key": "X-Rate-Limit",
+											"value": "<integer>"
+										},
+										{
+											"disabled": false,
+											"description": {
+												"content": "date in UTC when toekn expires",
+												"type": "text/plain"
+											},
+											"key": "X-Expires-After",
+											"value": "<dateTime>"
+										}
+									],
+									"cookie": [],
+									"body": "<string>"
+								},
+								{
+									"id": "1ca43eb7-1f0f-4d28-a23f-55b30a71ca6f",
+									"name": "Invalid username/password supplied",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/xml"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/user/login?username=<string>&password=<string>",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"user",
+												"login"
+											],
+											"query": [
+												{
+													"description": "(Required) The user name for login",
+													"key": "username",
+													"value": "<string>"
+												},
+												{
+													"description": "(Required) The password for login in clear text",
+													"key": "password",
+													"value": "<string>"
+												}
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "text",
+									"header": [],
+									"cookie": [],
+									"body": null
+								}
+							]
+						}
+					],
+					"id": "141ffcf5-a806-4601-9845-6be55d8e2fdc"
+				},
+				{
+					"name": "logout",
+					"item": [
+						{
+							"name": "Logs out current logged in user session",
+							"id": "419de921-5d44-40df-a5b6-096340e822ce",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/user/logout",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"user",
+										"logout"
+									]
+								}
+							},
+							"response": [
+								{
+									"id": "d1630c13-d2ff-44f2-b7b6-82c84dd82b03",
+									"name": "successful operation",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/user/logout",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"user",
+												"logout"
+											]
+										}
+									},
+									"status": "Internal Server Error",
+									"code": 500,
+									"_postman_previewlanguage": "text",
+									"header": [],
+									"cookie": [],
+									"body": null
+								}
+							]
+						}
+					],
+					"id": "95f4c1b0-0f41-48a3-81aa-0df8880d9e65"
+				},
+				{
+					"name": "{username}",
+					"item": [
+						{
+							"name": "Get user by user name",
+							"id": "94eca8d9-1d3c-44e8-8991-39efa945d9c8",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/xml"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/user/:username",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"user",
+										":username"
+									],
+									"variable": [
+										{
+											"key": "username",
+											"value": "<string>"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"id": "df23ac64-9dd9-4bb3-94a3-3d10261f723a",
+									"name": "successful operation",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/xml"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/user/:username",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"user",
+												":username"
+											],
+											"variable": [
+												{
+													"key": "username",
+													"value": "<string>"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"id\": \"<long>\",\n  \"username\": \"<string>\",\n  \"firstName\": \"<string>\",\n  \"lastName\": \"<string>\",\n  \"email\": \"<string>\",\n  \"password\": \"<string>\",\n  \"phone\": \"<string>\",\n  \"userStatus\": \"<integer>\"\n}"
+								},
+								{
+									"id": "5261d466-1732-4481-88f3-908d50a7392b",
+									"name": "Invalid username supplied",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/xml"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/user/:username",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"user",
+												":username"
+											],
+											"variable": [
+												{
+													"key": "username",
+													"value": "<string>"
+												}
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "text",
+									"header": [],
+									"cookie": [],
+									"body": null
+								},
+								{
+									"id": "72dd8142-9315-429b-b563-62acdf1480ad",
+									"name": "User not found",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/xml"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/user/:username",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"user",
+												":username"
+											],
+											"variable": [
+												{
+													"key": "username",
+													"value": "<string>"
+												}
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "text",
+									"header": [],
+									"cookie": [],
+									"body": null
+								}
+							]
+						},
+						{
+							"name": "Updated user",
+							"id": "3171843c-f822-483e-bc25-ed418d10fae0",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"id\": \"<long>\",\n  \"username\": \"<string>\",\n  \"firstName\": \"<string>\",\n  \"lastName\": \"<string>\",\n  \"email\": \"<string>\",\n  \"password\": \"<string>\",\n  \"phone\": \"<string>\",\n  \"userStatus\": \"<integer>\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/user/:username",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"user",
+										":username"
+									],
+									"variable": [
+										{
+											"key": "username",
+											"value": "<string>"
+										}
+									]
+								},
+								"description": "This can only be done by the logged in user."
+							},
+							"response": [
+								{
+									"id": "ee3d4dc2-434e-4520-9d29-7dac52b674a2",
+									"name": "Invalid user supplied",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"id\": \"<long>\",\n  \"username\": \"<string>\",\n  \"firstName\": \"<string>\",\n  \"lastName\": \"<string>\",\n  \"email\": \"<string>\",\n  \"password\": \"<string>\",\n  \"phone\": \"<string>\",\n  \"userStatus\": \"<integer>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/user/:username",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"user",
+												":username"
+											],
+											"variable": [
+												{
+													"key": "username",
+													"value": "<string>"
+												}
+											]
+										},
+										"description": "This can only be done by the logged in user."
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "text",
+									"header": [],
+									"cookie": [],
+									"body": null
+								},
+								{
+									"id": "d976e951-ed18-45b9-8e4f-4b79d3259844",
+									"name": "User not found",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"id\": \"<long>\",\n  \"username\": \"<string>\",\n  \"firstName\": \"<string>\",\n  \"lastName\": \"<string>\",\n  \"email\": \"<string>\",\n  \"password\": \"<string>\",\n  \"phone\": \"<string>\",\n  \"userStatus\": \"<integer>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/user/:username",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"user",
+												":username"
+											],
+											"variable": [
+												{
+													"key": "username",
+													"value": "<string>"
+												}
+											]
+										},
+										"description": "This can only be done by the logged in user."
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "text",
+									"header": [],
+									"cookie": [],
+									"body": null
+								}
+							]
+						},
+						{
+							"name": "Delete user",
+							"id": "41cac75a-6c94-415f-a36c-2d85e98f9524",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/user/:username",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"user",
+										":username"
+									],
+									"variable": [
+										{
+											"key": "username",
+											"value": "<string>"
+										}
+									]
+								},
+								"description": "This can only be done by the logged in user."
+							},
+							"response": [
+								{
+									"id": "b81939ae-211c-4291-b94a-983796dcbf10",
+									"name": "Invalid username supplied",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/user/:username",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"user",
+												":username"
+											],
+											"variable": [
+												{
+													"key": "username",
+													"value": "<string>"
+												}
+											]
+										},
+										"description": "This can only be done by the logged in user."
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "text",
+									"header": [],
+									"cookie": [],
+									"body": null
+								},
+								{
+									"id": "eac74c18-1d27-4593-b159-5a8d6bcee1df",
+									"name": "User not found",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/user/:username",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"user",
+												":username"
+											],
+											"variable": [
+												{
+													"key": "username",
+													"value": "<string>"
+												}
+											]
+										},
+										"description": "This can only be done by the logged in user."
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "text",
+									"header": [],
+									"cookie": [],
+									"body": null
+								}
+							]
+						}
+					],
+					"id": "ab2ea712-aba1-4a76-a598-57c0b087039f"
+				},
+				{
+					"name": "Create user",
+					"id": "442c1315-783d-47dc-bdfd-114b8f97dd3c",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"id\": \"<long>\",\n  \"username\": \"<string>\",\n  \"firstName\": \"<string>\",\n  \"lastName\": \"<string>\",\n  \"email\": \"<string>\",\n  \"password\": \"<string>\",\n  \"phone\": \"<string>\",\n  \"userStatus\": \"<integer>\"\n}",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/user",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"user"
+							]
+						},
+						"description": "This can only be done by the logged in user."
+					},
+					"response": [
+						{
+							"id": "8202f085-2aee-468e-9ea1-88ca383cdf2b",
+							"name": "successful operation",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"id\": \"<long>\",\n  \"username\": \"<string>\",\n  \"firstName\": \"<string>\",\n  \"lastName\": \"<string>\",\n  \"email\": \"<string>\",\n  \"password\": \"<string>\",\n  \"phone\": \"<string>\",\n  \"userStatus\": \"<integer>\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/user",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"user"
+									]
+								},
+								"description": "This can only be done by the logged in user."
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "text",
+							"header": [],
+							"cookie": [],
+							"body": null
+						}
+					]
+				}
+			],
+			"id": "4b459fa8-c58b-460c-b1c2-62c80baed6da"
+		}
+	],
+	"variable": [
+		{
+			"id": "c5e3271e-60a0-4067-96aa-0ac1ab200a9d",
+			"key": "baseUrl",
+			"value": "/"
+		}
+	]
+}
