@@ -11,11 +11,11 @@ externalDocs:
   url: https://openapi-generator.tech
 tags:
 - name: pet
-  description: Everything about your Pets
+  description: Everything about your Pets asked
 - name: store
-  description: Access to Petstore orders
+  description: Access to Petstore orders asd
 - name: user
-  description: Operations about user
+  description: Operations about user dav fdv fv dfaf
 paths:
   /pet:
     put:
