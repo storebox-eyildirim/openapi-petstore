@@ -7,7 +7,7 @@ info:
     url: http://www.apache.org/licenses/LICENSE-2.0.html
   version: 1.0.0
 externalDocs:
-  description: Find out more about OpenAPI generator
+  description: Find out more about OpenAPI generator asdasdasdasd
   url: https://openapi-generator.tech
 tags:
 - name: pet
